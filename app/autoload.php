@@ -15,7 +15,12 @@ $loader->registerNamespaces(array(
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
+    'Sonata'           => __DIR__.'/../vendor/bundles',
+    'Knp\\Bundle'      => __DIR__.'/../vendor/bundles',
+    'Knp\\Menu'        => __DIR__.'/../vendor/bundles/Knp/Bundle/Menu/src',
+    'Cwsf2'            => __DIR__.'/../src',
 ));
+
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
