@@ -1,6 +1,8 @@
 app/cache/
 app/logs/
 
+*.php~
+
 .buildpath
 .project
 .settings

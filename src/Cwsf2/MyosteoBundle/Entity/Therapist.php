@@ -2,17 +2,13 @@
 
 namespace Cwsf2\MyosteoBundle\Entity;
 
-use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="user")
- * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"user" = "User", "therapist" = "Therapist"})
+ * @ORM\Table(name="therapist")
  */
-class User extends BaseUser
+class Therapist extends User
 {
     /**
      * @ORM\Id
@@ -20,7 +16,13 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    protected $adeli;
+    
     public function __construct()
     {
         parent::__construct();
@@ -35,5 +37,27 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+
+
+    /**
+     * Set adeli
+     *
+     * @param string $adeli
+     */
+    public function setAdeli($adeli)
+    {
+        $this->adeli = $adeli;
+    }
+
+    /**
+     * Get adeli
+     *
+     * @return string 
+     */
+    public function getAdeli()
+    {
+        return $this->adeli;
     }
 }

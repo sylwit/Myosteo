@@ -9,7 +9,7 @@ security:
     providers:
         in_memory:
             users:
-                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                #user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                 admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
         fos_userbundle:
             id: fos_user.user_manager
@@ -35,17 +35,26 @@ security:
             #http_basic:
             #    realm: "Secured Demo Area"
 
-        main:
-            pattern: ^/
+        user:
+            pattern: ^/user/
             provider: fos_userbundle
             form_login:
-                check_path: /login_check
-                login_path: /login    
+                check_path: /user/login_check
+                login_path: /user/login    
             logout:
-                path: /logout
+                path: /user/logout
                 target: /
             anonymous: ~            
 
+        admin:
+            pattern: ^/admin/
+            form_login:
+                check_path: /admin/login_check
+                login_path: /admin/login    
+            logout:
+                path: /admin/logout
+                target: /
+            anonymous: ~            
 
 
     access_control:
@@ -55,4 +64,5 @@ security:
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, roles: ROLE_ADMIN }        

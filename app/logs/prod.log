@@ -1,2 +1,0 @@
-[2011-09-03 12:21:26] security.INFO: Populated SecurityContext with an anonymous Token [] []
-[2011-09-03 12:21:26] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /var/www/public/myosteo/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/EventListener/RouterListener.php line 88 [] []
