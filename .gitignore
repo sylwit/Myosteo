@@ -1,5 +1,5 @@
-app/cache/*
-app/logs/*
+app/cache/
+app/logs/
 
 .buildpath
 .project
