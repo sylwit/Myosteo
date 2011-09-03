@@ -1,0 +1,7 @@
+parameters:
+#    cwsf2_myosteo.example.class: Cwsf2\MyosteoBundle\Example
+
+services:
+#    cwsf2_myosteo.example:
+#        class: %cwsf2_myosteo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
