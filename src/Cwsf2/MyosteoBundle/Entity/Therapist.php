@@ -3,6 +3,7 @@
 namespace Cwsf2\MyosteoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -10,8 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Therapist extends User
 {
-    const ROLE_THERAPIST = 'ROLE_THERAPIST';
-    
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -20,6 +19,12 @@ class Therapist extends User
     protected $id;
     
 
+     /**
+     * @ORM\ManyToMany(targetEntity="Secretary", mappedBy="therapists")
+     */
+    protected $secretaries;
+    
+    
     /**
      * @ORM\Column(type="string", length=10, nullable=true)
      */
@@ -28,7 +33,7 @@ class Therapist extends User
     public function __construct()
     {
         parent::__construct();
-        $this->roles[] = self::ROLE_THERAPIST;
+        $this->secretaries = new ArrayCollection();
     }
 
     /**
@@ -61,5 +66,25 @@ class Therapist extends User
     public function getAdeli()
     {
         return $this->adeli;
+    }
+
+    /**
+     * Add secretaries
+     *
+     * @param Cwsf2\MyosteoBundle\Entity\Secretary $secretaries
+     */
+    public function addSecretary(\Cwsf2\MyosteoBundle\Entity\Secretary $secretaries)
+    {
+        $this->secretaries[] = $secretaries;
+    }
+
+    /**
+     * Get secretaries
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getSecretaries()
+    {
+        return $this->secretaries;
     }
 }
