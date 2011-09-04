@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+  <section>
+    <div class="page-header">
+      <h1>{% block title %}{% endblock %}</h1>
+    </div>
+    <div class="row">
+      {{ block('content_row') }}
+    </div>
+  </section>
+{% endblock %}

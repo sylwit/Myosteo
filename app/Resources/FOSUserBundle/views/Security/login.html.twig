@@ -1,0 +1,52 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block content_row %}
+
+  {% if error %}
+    <div class="alert-message error">
+      <a href="#" class="close">×</a>
+      <p>{{ error }}</p>
+    </div>
+  {% endif %}
+  
+  <div class="span4 columns">
+    Vous devez vous connecter pour accéder à toutes les fonctionnalités de Myosteo.
+  </div>
+  
+  <div class="span12 columns">
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+      <fieldset>
+        <legend>Vos identifiants</legend>
+        <div class="clearfix">
+          <label for="username">Email</label>
+          <div class="input">
+            <input type="text" size="30" name="_username" id="username" class="xlarge">
+          </div>
+        </div>
+      
+        <div class="clearfix">
+        <label for="password">Mot de passe</label>
+          <div class="input">
+            <input type="password" size="30" name="_password" id="password" class="xlarge">
+          </div>
+        </div>
+      
+        <div class="clearfix">
+          <div class="input">
+            <label>
+              <input type="checkbox" value="on" name="_remember_me">
+              <span>Remember me</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    
+      <div class="actions">
+        <button class="btn primary" type="submit" id="_submit" name="_submit">Se connecter</button>
+        <a class="btn" href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}
