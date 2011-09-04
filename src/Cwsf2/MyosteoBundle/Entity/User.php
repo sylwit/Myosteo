@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
- * @ORM\InheritanceType("JOINED")
+ * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"user" = "User", "therapist" = "Therapist"})
+ * @ORM\DiscriminatorMap({"user" = "User", "therapist" = "Therapist", "secretary" = "Secretary"})
  */
 class User extends BaseUser
 {

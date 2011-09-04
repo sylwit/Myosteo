@@ -69,3 +69,8 @@ services:
       tags:
         - { name: sonata.admin, manager_type: orm, label: therapist }
       arguments: [null, Cwsf2\MyosteoBundle\Entity\Therapist, null]    
+   admin.secretary:
+      class: Cwsf2\MyosteoBundle\Admin\SecretaryAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, label: secretary }
+      arguments: [null, Cwsf2\MyosteoBundle\Entity\Secretary, null]
