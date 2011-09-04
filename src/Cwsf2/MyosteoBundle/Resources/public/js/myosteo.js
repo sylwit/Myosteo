@@ -4,4 +4,10 @@ $(function(){
       $(this).parent().addClass('active');
     }
   });
+  
+  $('.alert-message .close').click(function(){
+	$(this).parent().fadeOut(1000, function () {
+	  $(this).remove();
+    });
+  });
 });

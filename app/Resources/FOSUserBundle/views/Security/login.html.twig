@@ -3,19 +3,20 @@
 {% block title %}Se connecter{% endblock %}
 
 {% block content_row %}
-
-  {% if error %}
-    <div class="alert-message error">
-      <a href="#" class="close">×</a>
-      <p>{{ error }}</p>
-    </div>
-  {% endif %}
   
   <div class="span4 columns">
     Vous devez vous connecter pour accéder à toutes les fonctionnalités de Myosteo.
   </div>
   
   <div class="span12 columns">
+
+    {% if error %}
+      <div class="alert-message error">
+        <a href="#" class="close">×</a>
+        <p>{{ error }}</p>
+      </div>
+    {% endif %}
+    
     <form action="{{ path("fos_user_security_check") }}" method="post">
       <fieldset>
         <legend>Vos identifiants</legend>
