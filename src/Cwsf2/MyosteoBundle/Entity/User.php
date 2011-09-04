@@ -4,6 +4,8 @@ namespace Cwsf2\MyosteoBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Cwsf2\MyosteoBundle\Entity\Therapist;
+use Cwsf2\MyosteoBundle\Entity\Secretary;
 
 /**
  * @ORM\Entity
@@ -39,4 +41,27 @@ class User extends BaseUser
     {
         return $this->id;
     }
+    
+
+    /**
+     * Check if user is a Therapist
+     *
+     * @return integer 
+     */
+    public function isTherapist()
+    {
+        return ($this instanceof Therapist);
+    }
+
+    /**
+     * Check if user is a Secretary
+     *
+     * @return integer 
+     */
+    public function isSecretary()
+    {
+        return ($this instanceof Secretary);
+    }
+    
+    
 }
