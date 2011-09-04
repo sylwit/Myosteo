@@ -25,6 +25,9 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+        $this->algorithm    = 'sha512';
+        $this->password     = 'cwsf2';
+        $this->enabled      = 1;
     }
 
     /**

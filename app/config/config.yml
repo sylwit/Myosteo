@@ -61,4 +61,11 @@ jms_security_extra:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb'
     firewall_name: main
-    user_class: Cwsf2\MyosteoBundle\Entity\User  
+    user_class: Cwsf2\MyosteoBundle\Entity\User
+    
+services:
+   admin.therapist:
+      class: Cwsf2\MyosteoBundle\Admin\TherapistAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, label: therapist }
+      arguments: [null, Cwsf2\MyosteoBundle\Entity\Therapist, null]    

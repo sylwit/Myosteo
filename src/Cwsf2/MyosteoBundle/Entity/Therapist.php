@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Therapist extends User
 {
+    const ROLE_THERAPIST = 'ROLE_THERAPIST';
+    
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -19,14 +21,14 @@ class Therapist extends User
     
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     protected $adeli;
     
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->roles[] = self::ROLE_THERAPIST;
     }
 
     /**
