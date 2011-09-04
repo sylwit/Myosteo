@@ -1,5 +1,34 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-	Hello world
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Bienvenu sur Myosteo !</h1>
+        <p>
+        	Myosteo vous permet de gérer les rendez-vous avec vos patients.<br/>
+        	Grâce à lui, vous aurez accès en un seul clic à toutes vos consultations.
+    	</p>
+        <p><a href="{{ path('fos_user_security_login') }}" class="btn primary large">Connectez-vous &raquo;</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span6">
+          <h2>Disponible</h2>
+          <p>Myosteo vous permet d'avoir une sauvegarde en ligne de toute vos consultations.</p>
+          <p>Ne risquez plus de perdre vos fiches patients.</p>
+        </div>
+        <div class="span5">
+          <h2>Sécurité</h2>
+           <p>Le secret médical est très important.</P>
+           <p>sur Myosteo, personne à part vous peut consulter vos fiches patients</p>
+       </div>
+        <div class="span5">
+          <h2>Secrétariat</h2>
+          <p>Grace à Myosteo, votre secrétaire pourra gérer vos rendez-vous à votre place.</p>
+          <p>Vous pourrez accéder quand vous voulez et de nimporte où à votre planning.</p>
+        </div>
+      </div>
+      
 {% endblock %}

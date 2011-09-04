@@ -1,7 +1,7 @@
 # IDEE: Pensez à faire un "php app/console router:debug" pour avoir une vision plus globale des routes
 
 #Myosteo
-Cwsf2MyosteoBundle:
+cwsf2_myosteo:
     resource: "@Cwsf2MyosteoBundle/Resources/config/routing.yml"
     prefix:   /
 

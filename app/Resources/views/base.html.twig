@@ -21,6 +21,7 @@
     <script src="{{ asset('bundles/sonataadmin/qtip/jquery.qtip-1.0.0-rc3.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/sonataadmin/jquery/jquery.form.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/sonataadmin/base.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/cwsf2myosteo/js/active-link.js') }}" type="text/javascript"></script>
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -32,43 +33,36 @@
 
   <body>
 
-    <!-- Topbar
-    ================================================== -->
     <div class="topbar">
-      <div class="topbar-inner">
+      <div class="fill">
         <div class="container">
-          <h3><a href="#">Bootstrap</a></h3>
-
+          <h3><a href="{{ path('cwsf2_myosteo_home') }}">Myosteo</a></h3>
           <ul class="nav">
-            <li class="active"><a href="#masthead">Overview</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#grid-system">Grid</a></li>
-            <li><a href="#layouts">Layouts</a></li>
-            <li><a href="#typography">Typography</a></li>
-
-            <li><a href="#tables">Tables</a></li>
-            <li><a href="#forms">Forms</a></li>
-            <li><a href="#navigation">Navigation</a></li>
-            <li><a href="#alerts">Alerts</a></li>
-            <li><a href="#popovers">Popovers</a></li>
-            <li><a href="#less">Less</a></li>
-
+            <li><a href="{{ path('cwsf2_myosteo_home') }}">Accueil</a></li>
+            {% if is_granted("ROLE_ADMIN") %}
+              <li><a href="{{ path('cwsf2_myosteo_admin') }}">Administration</a></li>
+            {% endif %}
+          </ul>
+          <ul class="nav secondary-nav">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
+            {% else %}
+              <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Masthead (blueprinty thing)
-    ================================================== -->
-    <div id="masthead">
-      <div class="inner">
-        <div id="content" class="container">
+    <div class="container">
+      
+      {{ block('content') }}
+      
+      <footer>
+        <p>&copy; Développé par <a href="http://twitter.com/switmeyer">Sylvain</a> & <a href="http://twitter.com/tzilliox">Thomas</a></p>
+      </footer>
 
-          <h1>Myosteo</h1>
-          
-        </div>
-      </div>
-    </div>
+    </div> <!-- /container -->
 
   </body>
 </html>
