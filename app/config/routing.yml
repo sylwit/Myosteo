@@ -1,31 +1,30 @@
+# IDEE: Pensez à faire un "php app/console router:debug" pour avoir une vision plus globale des routes
+
+#Myosteo
 Cwsf2MyosteoBundle:
     resource: "@Cwsf2MyosteoBundle/Resources/config/routing.yml"
     prefix:   /
 
+
+#User
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
     prefix: /user
-
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
     prefix: /user/profile
-
-#fos_user_register:
-#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-#    prefix: /user/register
-
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
     prefix: /user
-
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /user
 
+
+#Admin
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
-
 _sonata_admin:
     resource: .
     type: sonata_admin
