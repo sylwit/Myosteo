@@ -15,6 +15,8 @@ security:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        # Defini les routes qui pour la gestion des session
         user:
             pattern: ^/
             provider: fos_userbundle
@@ -24,8 +26,11 @@ security:
             logout:
                 path: /user/logout
                 target: /
+            # Le "~" veut dire valeur par defaut
             anonymous: ~              
 
+    # Defini les routes que les différents roles peuvent visiter.
+    # Si on a pas le droit d'acces, on est redirige vers la page de login definie ci-dessus
     access_control:
         - { path: ^/user/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/resetting, roles: IS_AUTHENTICATED_ANONYMOUSLY }

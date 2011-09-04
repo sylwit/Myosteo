@@ -23,6 +23,9 @@ class AppKernel extends Kernel
             new Sonata\BluePrintBundle\SonataBluePrintBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            // A chaque création de Bundle, il faut ajouter son Bundle ici
+            // Ceci se fait automatiquement si l'on passe par "php app/console generate:bundle" 
+            // et que vous répondez yes à "Confirm automatic update of your Kernel" 
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

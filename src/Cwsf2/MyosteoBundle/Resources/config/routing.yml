@@ -2,6 +2,8 @@ Cwsf2MyosteoBundle_homepage:
     pattern:  /
     defaults: { _controller: Cwsf2MyosteoBundle:Default:index }
 
+# La route initial du dashboard de l'administration est /admin/dashboard
+# Pour simplifier on lie la route /admin/ avec le dashboard
 Cwsf2MyosteoBundle_admin:
     pattern:  /admin/
     defaults: { _controller: SonataAdminBundle:Core:dashboard }
